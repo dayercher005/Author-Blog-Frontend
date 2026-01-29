@@ -1,73 +1,70 @@
-# React + TypeScript + Vite
+# Blog (Author) - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Structure
 
-Currently, two official plugins are available:
+```bash
+.
+├── components.json
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── public
+├── README.md
+├── src
+│   ├── components
+│   │   ├── Login-form.tsx
+│   │   ├── NavigationBar.tsx
+│   │   ├── Signup-form.tsx
+│   │   └── SpinnerRequest.tsx
+│   ├── hooks
+│   │   └── use-mobile.ts
+│   ├── lib
+│   │   └── utils.ts
+│   ├── pages
+│   │   ├── App.tsx
+│   │   ├── CreateBlogPage.tsx
+│   │   ├── Dashboard.tsx
+│   │   ├── HomePage.tsx
+│   │   ├── LoginPage.tsx
+│   │   └── SignupPage.tsx
+│   ├── routes
+│   │   └── routes.tsx
+│   └── styles
+│       └── index.css
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🛠️ Languages and Tools
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+![Static Badge](https://img.shields.io/badge/Typescript-_?style=for-the-badge&logo=Typescript&logoColor=%233178C6&labelColor=black&color=%233178C6)![Static Badge](https://img.shields.io/badge/Tailwind-_?style=for-the-badge&logo=Tailwind%20CSS&logoColor=%2306B6D4&labelColor=black&color=%2306B6D4)![Static Badge](https://img.shields.io/badge/React-_?style=for-the-badge&logo=React&logoColor=%2361DAFB&labelColor=black&color=%2361DAFB)![Static Badge](https://img.shields.io/badge/React%20Router-_?style=for-the-badge&logo=React%20Router&logoColor=%23CA4245&labelColor=black&color=%23CA4245)![Static Badge](https://img.shields.io/badge/Vite-_?style=for-the-badge&logo=Vite&logoColor=%239135FF&labelColor=black&color=%239135FF)![Static Badge](https://img.shields.io/badge/Vitest-_?style=for-the-badge&logo=Vitest&logoColor=%2300FF74&labelColor=black&color=%2300FF74)![Static Badge](https://img.shields.io/badge/Shadcn-_?style=for-the-badge&logo=Shadcn%2Fui&logoColor=white&labelColor=black&color=white)
+
+
+---
+
+## How to Run 
+
+1. Clone the reposityro 
+```bash
+git clone
 ```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Start Development Server:
+```bash
+npm run dev
+```
+
+4. Open `http://localhost:5173` in your browser
+
+---
