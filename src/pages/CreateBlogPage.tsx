@@ -1,4 +1,4 @@
-export function DashboardPage(){
+export function CreateBlogPage(){
 
     return(
         <div>
