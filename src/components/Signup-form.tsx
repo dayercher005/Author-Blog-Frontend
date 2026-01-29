@@ -1,0 +1,96 @@
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import {
+  Field,
+  FieldDescription,
+  FieldGroup,
+  FieldLabel,
+  FieldSeparator,
+} from "@/components/ui/field"
+import { Input } from "@/components/ui/input";
+import { Link } from 'react-router';
+import { useState } from 'react';
+export function SignupForm({
+  className,
+  ...props
+}: React.ComponentProps<"form">) {
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const submitSignupForm = async (event) => {
+
+    event.preventDefault();
+
+    try{
+      const response = await fetch('http://localhost:8080/sign-up', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({username: username, password: password, confirmPassword: confirmPassword})
+      });
+
+      const result = response.json();
+      window.location.href = "http://localhost:5173/log-in"
+      return result
+    } catch(error){
+      throw new Error('Network response was not ok');
+    }
+  }
+
+  return (
+    <form onSubmit={submitSignupForm} action="/sign-up" method="POST" className={cn("flex flex-col gap-6", className)} {...props}>
+      <FieldGroup>
+        <div className="flex flex-col items-center gap-1 text-center">
+          <h1 className="text-2xl font-bold">Create your account</h1>
+          <p className="text-muted-foreground text-sm text-balance">
+            Fill in the form below to create your account
+          </p>
+        </div>
+        <Field>
+          <FieldLabel htmlFor="username">Username</FieldLabel>
+          <Input 
+          id="username" 
+          type="text" 
+          placeholder="John Doe"
+          onChange={(event) => setUsername(event.target.value)}
+          value={username}
+          required />
+        </Field>
+        <Field>
+          <FieldLabel htmlFor="password">Password</FieldLabel>
+          <Input 
+          id="password" 
+          type="password" 
+          onChange={(event) => {setPassword(event.target.value)}}
+          value={password}
+          required />
+          <FieldDescription>
+            Must be at least 8 characters long.
+          </FieldDescription>
+        </Field>
+        <Field>
+          <FieldLabel htmlFor="confirm-password">Confirm Password</FieldLabel>
+          <Input 
+          id="confirm-password" 
+          type="password"
+          onChange={(event) => {setConfirmPassword(event.target.value)}}
+          value={confirmPassword}
+          required />
+          <FieldDescription>Please confirm your password.</FieldDescription>
+        </Field>
+        <Field>
+          <Button type="submit">Create Account</Button>
+        </Field>
+        <FieldSeparator>Or</FieldSeparator>
+        <Field>
+          <FieldDescription className="px-6 text-center">
+            Already have an account? <Link to="/log-in">Sign in</Link>
+          </FieldDescription>
+        </Field>
+      </FieldGroup>
+    </form>
+  )
+}
