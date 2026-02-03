@@ -134,3 +134,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+.tox-editor-container{
+  margin: auto;
+}
