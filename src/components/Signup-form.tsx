@@ -8,8 +8,10 @@ import {
   FieldSeparator,
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input";
-import { Link } from 'react-router';
+import { Link, redirect } from 'react-router';
 import { useState } from 'react';
+
+
 export function SignupForm({
   className,
   ...props
@@ -24,7 +26,7 @@ export function SignupForm({
     event.preventDefault();
 
     try{
-      const response = await fetch('http://localhost:8080/sign-up', {
+      const response = await fetch('http://localhost:8080/author/sign-up', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -32,16 +34,21 @@ export function SignupForm({
         body: JSON.stringify({username: username, password: password, confirmPassword: confirmPassword})
       });
 
+      if (!response.ok){
+        throw new Error("Error")
+      }
+
       const result = response.json();
-      window.location.href = "http://localhost:5173/log-in"
+      redirect("http://localhost:5174/log-in")
       return result
+
     } catch(error){
-      throw new Error('Network response was not ok');
+      console.log(error)
     }
   }
 
   return (
-    <form onSubmit={submitSignupForm} action="/sign-up" method="POST" className={cn("flex flex-col gap-6", className)} {...props}>
+    <form onSubmit={submitSignupForm} action="http://localhost:8080/author/sign-up" method="POST" className={cn("flex flex-col gap-6", className)} {...props}>
       <FieldGroup>
         <div className="flex flex-col items-center gap-1 text-center">
           <h1 className="text-2xl font-bold">Create your account</h1>
