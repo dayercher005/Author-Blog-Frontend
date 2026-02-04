@@ -3,15 +3,17 @@
 import {
   Button
 } from "@/components/ui/button";
+import ToggleMode from '@/components/ThemeModeButton.tsx';
 import { Link } from 'react-router';
 
 
 export function NavigationBar() {
   return (
     <div className="flex justify-between items-center px-7 py-3">
-        <h1 className="text-xl font-bold">Blog</h1>
+        <h1 className="text-xl font-bold">PatchNote</h1>
 
-        <div>
+        <div className="flex items-center">
+            <ToggleMode />
             <Link to="/log-in">
                 <Button size="lg" className="bg-neutral-700 m-1.5 p-3 text-md hover:bg-neutral-800 transition">
                     Log In
