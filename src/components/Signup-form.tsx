@@ -51,9 +51,9 @@ export function SignupForm({
     <form onSubmit={submitSignupForm} action="http://localhost:8080/author/sign-up" method="POST" className={cn("flex flex-col gap-6", className)} {...props}>
       <FieldGroup>
         <div className="flex flex-col items-center gap-1 text-center">
-          <h1 className="text-2xl font-bold">Create your account</h1>
+          <h1 className="text-2xl font-bold">Create your PatchNote Publisher account</h1>
           <p className="text-muted-foreground text-sm text-balance">
-            Fill in the form below to create your account
+            Fill in the form below to create your account now!
           </p>
         </div>
         <Field>
@@ -61,7 +61,6 @@ export function SignupForm({
           <Input 
           id="username" 
           type="text" 
-          placeholder="John Doe"
           onChange={(event) => setUsername(event.target.value)}
           value={username}
           required />
