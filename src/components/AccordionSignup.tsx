@@ -24,7 +24,7 @@ const items = [
       "PatchNote is a Full-Stack Web Application that utilizes a REST API combined with a Front-End website built using PERN stack.",
   },
 ]
-export function AccordionQueries() {
+export function AccordionSignup() {
   return (
     <Accordion
       type="single"

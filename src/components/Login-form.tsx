@@ -10,6 +10,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useState } from 'react';
 import { Link } from 'react-router';
+import { AccordionLogin } from '@/components/AccordionLogin.tsx';
 
 export function LoginForm({
   className,
@@ -87,12 +88,8 @@ export function LoginForm({
               </FieldDescription>
             </FieldGroup>
           </form>
-          <div className="bg-muted relative hidden md:block">
-            <img
-              src="/placeholder.svg"
-              alt="Image"
-              className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
-            />
+          <div className="bg-muted relative hidden md:flex justify-center items-center p-10">
+            <AccordionLogin />
           </div>
         </CardContent>
       </Card>
