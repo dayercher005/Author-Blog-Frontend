@@ -2,7 +2,7 @@ import { SignupForm } from "@/components/Signup-form.tsx";
 import { ArrowLeftIcon } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
 import { Link } from 'react-router';
-import { AccordionQueries } from '@/components/AccordionQueries.tsx';
+import { AccordionSignup } from '@/components/AccordionSignup';
 import ToggleMode from '@/components/ThemeModeButton.tsx';
 
 export function SignupPage() {
@@ -25,7 +25,7 @@ export function SignupPage() {
         </div>
       </div>
       <div className="bg-muted flex justify-center items-center">
-        <AccordionQueries />
+        <AccordionSignup />
       </div>
     </div>
   )
