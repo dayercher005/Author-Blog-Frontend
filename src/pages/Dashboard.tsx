@@ -1,34 +1,74 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router';
+import { AuthenticatedNavigationBar } from '@/components/Auth-NavigationBar.tsx';
+import { UnauthenticatedNavigationBar } from '@/components/Unauth-NavigationBar.tsx';
+import { BlogCards } from '@/components/BlogCards.tsx';
 
 export function DashboardPage(){
 
+    const navigate = useNavigate();
+    
+    const [status, setStatus] = useState<boolean>(false);
+
     useEffect(() => {
+
+        let ignore = false;
 
         const API = "http://localhost:8080/author/dashboard";
         const token = localStorage.getItem("token");
 
         const AuthenticateAuthor = async() => {
-            const response = await fetch(API, {
-                method: "GET",
-                headers:{
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`
-                }
-            })
 
-            if (!response.ok){
-                console.log(response);
+            try{
+                const response = await fetch(API, {
+                    method: "GET",
+                    headers:{
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`
+                    }
+                })
+
+                if (!response.ok){
+                    console.log(response);
+                }
+                const data = await response.json();
+
+                if(response.status === 401 || response.status === 404 || response.status === 500){
+                    navigate("*");
+                }
+
+                if (!ignore){
+                    if(data){
+                        setStatus(true);
+                    }
+                }
+
+            } catch (error){
+                return error
             }
-            const data = await response.json();
-            
         }
 
         AuthenticateAuthor();
-    }, [])
+
+        return () => {
+            ignore = true
+        }
+
+    }, [navigate]);
+
+
+    if (status){
+        return (
+            <div>
+                <AuthenticatedNavigationBar />
+                <BlogCards />
+            </div>
+        )
+    }
 
     return(
         <div>
-            
+            <UnauthenticatedNavigationBar />
         </div>
     )
 }

@@ -8,25 +8,24 @@ export function CreateBlogPage(){
 
     return(
         <div>
+            <div className="bg-background flex min-h-svh flex-col gap-5 pt-6 md:pl-8">
 
-      <div className="bg-background flex min-h-svh flex-col gap-5 pt-6 md:pl-8">
+            <div className="pt-5 mx-20 flex justify-between">
+              <Link className="inline-block" to="/">
+                <Button>
+                  <ArrowLeftIcon className="size-4" />
+                </Button>
+              </Link>
+              <ToggleMode />
+            </div>
 
-      <div className="pt-5 mx-20 flex justify-between">
-        <Link className="inline-block" to="/">
-          <Button>
-            <ArrowLeftIcon className="size-4" />
-          </Button>
-        </Link>
-        <ToggleMode />
-      </div>
+            <div className="bg-background flex min-h-fit flex-col justify-center items-center p-6 md:p-8">
+              <div className="w-full max-w-3xl">
+                <CreateBlogForm />
+              </div>
+            </div>
+          </div>
 
-      <div className="bg-background flex min-h-fit flex-col justify-center items-center p-6 md:p-8">
-        <div className="w-full max-w-3xl">
-          <CreateBlogForm />
         </div>
-      </div>
-    </div>
-
-    </div>
     )
 }
