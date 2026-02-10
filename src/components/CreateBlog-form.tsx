@@ -6,7 +6,7 @@ import {
   FieldLabel
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input";
-import { redirect } from 'react-router';
+import { useNavigate } from 'react-router';
 import { useState, useRef, useEffect } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 
@@ -14,6 +14,8 @@ export function CreateBlogForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+
+  const navigate = useNavigate();
 
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('');
@@ -60,7 +62,7 @@ export function CreateBlogForm({
         });
 
         const result = response.json();
-        redirect("http://localhost:5174/dashboard")
+        navigate("/dashboard")
         return result
     } catch (error) {
         console.log(error);
