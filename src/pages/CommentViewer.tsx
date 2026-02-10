@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button.tsx';
 import { Trash } from 'lucide-react';
 import ToggleMode from '@/components/ThemeModeButton.tsx';
 import { ArrowLeftIcon } from 'lucide-react';
-
+import { SpinnerEmpty } from '@/components/SpinnerRequest.tsx';
 
 export function CommentViewer(){
 
@@ -53,8 +53,6 @@ export function CommentViewer(){
 
     useEffect(() => {
 
-        let ignore = false;
-
         async function fetchIndividualBlogDetails(){
             try{
                 const response = await fetch(API, {
@@ -73,16 +71,14 @@ export function CommentViewer(){
 
                 const blogComment = data.comment
 
-
-                if(!ignore){
-                    setCommentDetails(array => [...array,
-                        {content: blogComment.content,
-                         date: blogComment.date,
-                         id: blogComment.id,
-                         username: blogComment.userUsername,
-                        }
-                    ])
-                }
+                setCommentDetails(array => [...array,
+                    {content: blogComment.content,
+                        date: blogComment.date,
+                        id: blogComment.id,
+                        username: blogComment.userUsername,
+                    }
+                ])
+                
 
             } catch (error){
                 return error
@@ -93,11 +89,15 @@ export function CommentViewer(){
 
         fetchIndividualBlogDetails();
 
-        return () => {
-            ignore = true
-        }
     }, [API, token, navigate])
 
+    if (loading){
+        return(
+            <SpinnerEmpty />
+        )
+    }
+
+    const dateString = new Date(commentDetails[0].date)
 
     return(
         <div >
@@ -113,16 +113,16 @@ export function CommentViewer(){
 
             <div className="flex flex-col items-center">
 
-                <div className="hover:scale-105 max-w-md mx-auto bg-neutral-300 dark:bg-neutral-700 p-5 rounded-2xl my-5 transition">
-                    <div className="flex justify-between">
+                <div className="min-w-md mx-auto bg-neutral-300 dark:bg-neutral-700 p-5 rounded-2xl my-5 transition">
+                    <div className="flex justify-between py-2">
                         <h1 className="font-semibold">{commentDetails[0].username}</h1>
-                        <h1 className="font-semibold">{commentDetails[0].id}</h1>
+                        <h1 className="font-semibold">{dateString.toLocaleDateString()}</h1>
                     </div>
                     <p>{commentDetails[0].content}</p>
                 </div>
 
                 <p className="text-2xl font-semibold">Press the button to delete the comment</p>
-                <Button onClick={DeleteCommentDetails}>
+                <Button className="my-5" onClick={DeleteCommentDetails}>
                     <Trash />
                 </Button>
             </div>
