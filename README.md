@@ -43,7 +43,17 @@
 
 ## 🛠️ Languages and Tools
 
-![Static Badge](https://img.shields.io/badge/Typescript-_?style=for-the-badge&logo=Typescript&logoColor=%233178C6&labelColor=black&color=%233178C6)![Static Badge](https://img.shields.io/badge/Tailwind-_?style=for-the-badge&logo=Tailwind%20CSS&logoColor=%2306B6D4&labelColor=black&color=%2306B6D4)![Static Badge](https://img.shields.io/badge/React-_?style=for-the-badge&logo=React&logoColor=%2361DAFB&labelColor=black&color=%2361DAFB)![Static Badge](https://img.shields.io/badge/React%20Router-_?style=for-the-badge&logo=React%20Router&logoColor=%23CA4245&labelColor=black&color=%23CA4245)![Static Badge](https://img.shields.io/badge/Vite-_?style=for-the-badge&logo=Vite&logoColor=%239135FF&labelColor=black&color=%239135FF)![Static Badge](https://img.shields.io/badge/Vitest-_?style=for-the-badge&logo=Vitest&logoColor=%2300FF74&labelColor=black&color=%2300FF74)![Static Badge](https://img.shields.io/badge/Shadcn-_?style=for-the-badge&logo=Shadcn%2Fui&logoColor=white&labelColor=black&color=white)
+### Frontend: 
+![Static Badge](https://img.shields.io/badge/Typescript-_?style=for-the-badge&logo=Typescript&logoColor=%233178C6&labelColor=black&color=%233178C6)![Static Badge](https://img.shields.io/badge/Tailwind-_?style=for-the-badge&logo=Tailwind%20CSS&logoColor=%2306B6D4&labelColor=black&color=%2306B6D4)![Static Badge](https://img.shields.io/badge/React-_?style=for-the-badge&logo=React&logoColor=%2361DAFB&labelColor=black&color=%2361DAFB)![Static Badge](https://img.shields.io/badge/Shadcn-_?style=for-the-badge&logo=Shadcn%2Fui&logoColor=white&labelColor=black&color=white)
+
+### Routing: 
+![Static Badge](https://img.shields.io/badge/React%20Router-_?style=for-the-badge&logo=React%20Router&logoColor=%23CA4245&labelColor=black&color=%23CA4245)
+
+### Build Tools: 
+![Static Badge](https://img.shields.io/badge/Vite-_?style=for-the-badge&logo=Vite&logoColor=%239135FF&labelColor=black&color=%239135FF)
+
+### Testing: 
+![Static Badge](https://img.shields.io/badge/Vitest-_?style=for-the-badge&logo=Vitest&logoColor=%2300FF74&labelColor=black&color=%2300FF74) ![Static Badge](https://img.shields.io/badge/Jest-_?style=for-the-badge&logo=Jest&logoColor=%23C21325&labelColor=black&color=%23C21325)
 
 
 ---
