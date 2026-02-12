@@ -45,7 +45,7 @@ export function CreateBlogForm({
 
   }, [])
 
-  const submitBlogForm = async (event) => {
+  const submitBlogForm = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
     event.preventDefault();
 
     const API = "http://localhost:8080/author/create-blog";
@@ -96,12 +96,12 @@ export function CreateBlogForm({
             <FieldLabel htmlFor="content">Blog Content</FieldLabel>
             <Editor
                 apiKey={API_Key}
-                onInit={ (_evt, editor) => editorRef.current = editor }
+                onInit={ (_evt: string, editor) => editorRef.current = editor }
                 initialValue="<p>This is the initial content of the editor.</p>"
                 textareaName="content"
                 id="textarea"
                 value={content}
-                onEditorChange={(content, editor) => setContent(content)}
+                onEditorChange={(content) => setContent(content)}
                 init={{
                 content_css: '../styles/index.css',
                 hidden_input: false,
