@@ -21,7 +21,7 @@ export function CommentViewer(){
     const navigate = useNavigate();
     const { blogID, commentID } = useParams();
 
-    const API = `http://localhost:8080/author/dashboard/${blogID}/${commentID}`;
+    const API = `https://blog-api-backend-h85d.onrender.com/author/dashboard/${blogID}/${commentID}`;
     const token = localStorage.getItem("token");
     
 

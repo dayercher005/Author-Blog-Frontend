@@ -14,7 +14,7 @@ export function DashboardPage(){
 
         let ignore = false;
 
-        const API = "http://localhost:8080/author/dashboard";
+        const API = "https://blog-api-backend-h85d.onrender.com/author/dashboard";
         const token = localStorage.getItem("token");
 
         const AuthenticateAuthor = async() => {

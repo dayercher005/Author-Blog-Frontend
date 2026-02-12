@@ -7,7 +7,7 @@ export function NotFound(){
     return(
         <div className="text-center">
             < ToggleMode />
-            <img className="size-100 mx-auto" src="/src/assets/NotFound.svg" />
+            <img className="size-100 mx-auto" src="/public/NotFound.svg" />
 
             <h1 className="text-4xl font-extrabold mb-10">404 Not Found</h1>
 

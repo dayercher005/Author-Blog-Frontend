@@ -33,7 +33,7 @@ export function BlogViewer(){
     const [individualBlogDetails, setIndividualBlogDetails] = useState<IndividualBlogDetailsProps[]>([]);
     const [blogComments, setBlogComments] = useState<BlogCommentProps[]>([]);
 
-    const API= `http://localhost:8080/author/dashboard/${blogID}`;
+    const API= `https://blog-api-backend-h85d.onrender.com/author/dashboard/${blogID}`;
     const token = localStorage.getItem("token");
 
     useEffect(() => {
