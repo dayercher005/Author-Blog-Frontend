@@ -28,14 +28,14 @@ export function DashboardPage(){
                     }
                 })
 
+                if(response.status === 401){
+                    navigate("/error");
+                }
+
                 if (!response.ok){
                     console.log(response);
                 }
                 const data = await response.json();
-
-                if(response.status === 401 || response.status === 404 || response.status === 500){
-                    navigate("*");
-                }
 
                 if (!ignore){
                     if(data){
