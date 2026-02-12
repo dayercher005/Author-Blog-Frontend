@@ -36,7 +36,7 @@ export function BlogCard({
     return (
     <Card className="bg-neutral-300 dark:bg-neutral-700 relative mx-auto w-full max-w-sm px-1 pt-0.5">
       
-      <img src="/public/code.jpg"
+      <img src="/code.jpg"
         className="relative z-20 aspect-video w-full object-cover p-1.5 rounded-xl"
       />
       <CardHeader>

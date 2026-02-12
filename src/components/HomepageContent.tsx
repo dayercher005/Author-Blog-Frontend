@@ -14,7 +14,7 @@ export function HomepageContent(){
                             simple yet seamless interface, you don’t need to be a tech expert to look like a pro. Just open the page, 
                             start typing, and let us handle the rest</p>
                     </div>
-                    <img className="size-85" src="/public/writing.svg"></img>
+                    <img className="size-85" src="/writing.svg"></img>
                 </div>
             </RiseUp>
 
@@ -28,7 +28,7 @@ export function HomepageContent(){
 
             <RiseUp>
                 <div id="Authenticate" className="flex justify-evenly py-20">
-                    <img className="size-85" src="/public/components.svg"></img>
+                    <img className="size-85" src="/components.svg"></img>
                     <div className="max-w-lg">
                         <h1 className="font-bold text-2xl text-center p-5"><span className="text-blue-500 dark:text-pink-500">Write</span> without the <span className="text-slate-800 dark:text-blue-500">Noise</span>.</h1>
                         <p className="py-1.2 px-5 font-semibold">We’ve stripped away the clutter to bring you a seamless interface where
@@ -54,7 +54,7 @@ export function HomepageContent(){
                             We don’t just host your content; we push it to the readers who care about your niche, helping you build a global
                              following from your very first blog.</p>
                     </div>
-                    <img className="size-85" src="/public/blog.svg"></img>
+                    <img className="size-85" src="/blog.svg"></img>
                 </div>
             </FadeIn>
         </div>
