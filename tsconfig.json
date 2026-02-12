@@ -5,9 +5,9 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
-    "types": ["node", "vitest/globals", "@testing-library/jest-dom"],
     "paths": {
       "@/*": ["./src/*"]
     },
+    "types": ["vitest/globals", "@testing-library/jest-dom"]
   }
 }
