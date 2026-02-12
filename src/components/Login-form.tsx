@@ -22,7 +22,7 @@ export function LoginForm({
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const submitLoginForm = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
+    const submitLoginForm = async (event: React.SubmitEvent<HTMLFormElement>): Promise<void> => {
         
         event.preventDefault();
 

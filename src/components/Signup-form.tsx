@@ -23,7 +23,7 @@ export function SignupForm({
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const submitSignupForm = async (event :React.FormEvent<HTMLFormElement>): Promise<void> => {
+  const submitSignupForm = async (event: React.SubmitEvent<HTMLFormElement>): Promise<void> => {
 
     event.preventDefault();
 
