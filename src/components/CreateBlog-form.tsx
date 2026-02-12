@@ -48,7 +48,7 @@ export function CreateBlogForm({
   const submitBlogForm = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
     event.preventDefault();
 
-    const API = "http://localhost:8080/author/create-blog";
+    const API = "https://blog-api-backend-h85d.onrender.com/author/create-blog";
     const token = localStorage.getItem("token")
 
     try{

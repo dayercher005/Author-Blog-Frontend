@@ -28,7 +28,7 @@ export function SignupForm({
     event.preventDefault();
 
     try{
-      const response = await fetch('http://localhost:8080/author/sign-up', {
+      const response = await fetch('https://blog-api-backend-h85d.onrender.com/author/sign-up', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
