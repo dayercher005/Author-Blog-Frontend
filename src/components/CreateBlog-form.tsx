@@ -35,7 +35,11 @@ export function CreateBlogForm({
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`
             }
-        })
+        });
+
+        if (!response.ok){
+          navigate("/error");
+        }
 
         const data = await response.json();
         console.log(data);
