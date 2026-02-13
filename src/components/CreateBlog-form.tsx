@@ -47,7 +47,7 @@ export function CreateBlogForm({
 
     validateAuthor();
 
-  }, [])
+  }, [navigate])
 
   const submitBlogForm = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
     event.preventDefault();

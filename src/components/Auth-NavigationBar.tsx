@@ -25,6 +25,13 @@ export function AuthenticatedNavigationBar() {
 
         <div className="flex items-center">
             <ToggleMode />
+
+            <Link to="/create-blog">
+                <Button size="lg" className="bg-neutral-700 m-1.5 p-3 text-md hover:bg-neutral-800 transition">
+                    Create Blog
+                </Button>
+            </Link>
+
             <Link to="/dashboard">
                 <Button size="lg" className="bg-neutral-700 m-1.5 p-3 text-md hover:bg-neutral-800 transition">
                     Dashboard
