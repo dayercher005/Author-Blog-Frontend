@@ -24,7 +24,7 @@ export function CreateBlogForm({
 
   useEffect(() => {
 
-    const API = "http://localhost:8080/author/create-blog";
+    const API = "https://blog-api-backend-h85d.onrender.com/author/create-blog";
     const token = localStorage.getItem("token")
 
     const validateAuthor = async () => {
@@ -76,7 +76,7 @@ export function CreateBlogForm({
 
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       
-      <form onSubmit={submitBlogForm} action="http://localhost:8080/user/create-blog" method="POST">
+      <form onSubmit={submitBlogForm} action="https://blog-api-backend-h85d.onrender.com/user/create-blog" method="POST">
         <FieldGroup>
           <div className="flex flex-col items-center gap-2 text-center">
             <h1 className="text-3xl font-bold">Create a New Blog!</h1>
