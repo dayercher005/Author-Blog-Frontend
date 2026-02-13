@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input";
 import { Link, useNavigate } from 'react-router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 export function SignupForm({
@@ -23,12 +23,30 @@ export function SignupForm({
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
+  const API = 'https://blog-api-backend-h85d.onrender.com/author/sign-up'
+
+  useEffect(() => {
+
+    const renderSignupForm = async () => {
+        const response = await fetch(API);
+
+        if (!response.ok){
+            throw new Error("error");
+        }
+
+        const data = await response.json();
+        return data
+    }
+
+    renderSignupForm();
+  }, [])
+
   const submitSignupForm = async (event: React.SubmitEvent<HTMLFormElement>): Promise<void> => {
 
     event.preventDefault();
 
     try{
-      const response = await fetch('https://blog-api-backend-h85d.onrender.com/author/sign-up', {
+      const response = await fetch(API, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

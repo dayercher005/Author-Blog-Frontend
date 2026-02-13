@@ -8,7 +8,7 @@ import {
   FieldLabel,
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AccordionLogin } from '@/components/AccordionLogin.tsx';
 
@@ -22,12 +22,31 @@ export function LoginForm({
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
+    const API = "https://blog-api-backend-h85d.onrender.com/author/log-in";
+
+
+    useEffect(() => {
+
+      const renderLoginForm = async () => {
+          const response = await fetch(API);
+
+          if (!response.ok){
+              throw new Error("error");
+          }
+
+          const data = await response.json();
+          return data
+      }
+
+      renderLoginForm();
+  }, [])
+
     const submitLoginForm = async (event: React.SubmitEvent<HTMLFormElement>): Promise<void> => {
         
         event.preventDefault();
 
         try{
-            const response = await fetch("https://blog-api-backend-h85d.onrender.com/author/log-in", {
+            const response = await fetch(API, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
